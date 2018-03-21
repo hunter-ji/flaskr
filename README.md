@@ -1,1 +1,1 @@
-##  myflaskr:v8
+##  myflaskr:latest
