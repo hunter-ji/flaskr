@@ -1,1 +1,3 @@
 ##  myflaskr:latest
+* flask
+* pdfkit
