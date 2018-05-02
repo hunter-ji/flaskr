@@ -1,5 +1,7 @@
 FROM python:latest
+
 LABEL maintainer "Kuari <kuari@justmylife.cc>"
+
 RUN mkdir /web && \
     pip install flask \
     flask-cache \
@@ -7,5 +9,7 @@ RUN mkdir /web && \
     flask_migrate \
     flask-sqlalchemy \
     pymysql \
-    requests
+    requests \
+    tornado
+
 CMD python /web/flaskr.py
