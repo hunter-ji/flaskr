@@ -3,7 +3,7 @@ FROM python:latest
 LABEL maintainer "Kuari <kuari@justmylife.cc>"
 
 RUN apt-get update && \
-    apt-get install nginx
+    apt-get install nginx -y
 
 RUN mkdir /web && \
     pip install flask \
