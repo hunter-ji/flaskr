@@ -8,6 +8,7 @@ RUN mkdir /web && \
     flask_script \
     flask_migrate \
     flask-sqlalchemy \
+    flask_mail \
     pymysql \
     requests \
     tornado
