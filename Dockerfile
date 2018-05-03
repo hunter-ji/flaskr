@@ -12,4 +12,7 @@ RUN mkdir /web && \
     requests \
     tornado
 
+#Open 5000 port
+EXPOSE 5000
+
 CMD python /web/run.py
