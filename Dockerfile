@@ -12,4 +12,4 @@ RUN mkdir /web && \
     requests \
     tornado
 
-CMD python /web/flaskr.py
+CMD python /web/run.py
