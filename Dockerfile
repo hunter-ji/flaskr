@@ -2,6 +2,9 @@ FROM python:latest
 
 LABEL maintainer "Kuari <kuari@justmylife.cc>"
 
+RUN apt-get update && \
+    apt-get install nginx
+
 RUN mkdir /web && \
     pip install flask \
     flask-cache \
@@ -14,5 +17,7 @@ RUN mkdir /web && \
 
 #Open 5000 port
 EXPOSE 5000
+EXPOSE 80
+EXPOSE 443
 
-CMD python /web/run.py
+CMD python /web/run.py && systemctl start nginx
