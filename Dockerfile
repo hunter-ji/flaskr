@@ -10,7 +10,6 @@ RUN mkdir /web && \
     flask-sqlalchemy \
     flask_mail \
     pymysql \
-    requests \
-    tornado
+    requests 
 
-CMD python /web/run.py
+CMD python /web/flaskr.py
