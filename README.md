@@ -1,4 +1,5 @@
 ##  myflaskr:latest
+增加了pdfkit的库
 ```dockerfile
 FROM python:latest
 
@@ -13,6 +14,15 @@ RUN mkdir /web && \
     pymysql \
     requests \
     tornado
+
+ENV QT_QPA_PLATFORM=offscreen
+
+RUN pip install pdfkit \
+    && apt-get update && apt-get install wkhtmltopdf -y \
+    && mkdir /usr/lib/x86_64-linux-gnu/fonts
+
+ADD ./msyhbd.ttc /usr/lib/x86_64-linux-gnu/fonts/
+
 
 CMD python /web/run.py
 ```
