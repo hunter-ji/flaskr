@@ -11,7 +11,8 @@ RUN mkdir /web && \
     flask_mail \
     pymysql \
     requests \
-    pyquery
+    pyquery \
+    tornado
 
 ENV QT_QPA_PLATFORM=offscreen
 
