@@ -10,13 +10,16 @@ RUN mkdir /web && \
     flask-sqlalchemy \
     flask_mail \
     pymysql \
-    requests
+    requests \
+    pyquery
 
 ENV QT_QPA_PLATFORM=offscreen
 
 RUN pip install pdfkit \
     && apt-get update && apt-get install wkhtmltopdf -y \
     && mkdir /usr/lib/x86_64-linux-gnu/fonts
+
+RUN rm -rf /var/lib/apt/lists/*
 
 ADD ./msyhbd.ttc /usr/lib/x86_64-linux-gnu/fonts/
 
