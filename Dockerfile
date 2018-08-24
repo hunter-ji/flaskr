@@ -24,4 +24,4 @@ RUN rm -rf /var/lib/apt/lists/*
 
 ADD ./msyhbd.ttc /usr/lib/x86_64-linux-gnu/fonts/
 
-CMD python /web/flaskr.py
+CMD python /web/main.py
