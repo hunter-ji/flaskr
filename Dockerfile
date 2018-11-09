@@ -10,6 +10,8 @@ RUN mkdir /web && \
     flask-sqlalchemy \
     flask_mail \
     pymysql \
-    requests 
+    requests \
+    pytest \
+    sqlite3
 
 CMD python /web/flaskr.py
