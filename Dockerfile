@@ -20,6 +20,8 @@ RUN pip install pdfkit \
     && apt-get update && apt-get install wkhtmltopdf -y \
     && mkdir /usr/lib/x86_64-linux-gnu/fonts
 
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 RUN rm -rf /var/lib/apt/lists/*
 
 ADD ./msyhbd.ttc /usr/lib/x86_64-linux-gnu/fonts/
