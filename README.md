@@ -5,8 +5,8 @@ FROM python
 
 LABEL maintainer "Kuari <kuari@justmylife.cc>"
 
-RUN pip install -i https://pypi.douban.com/simple --upgrade pip \
-    && pip install redis Flask flask_restful flask_sqlalchemy flask_cors flask-cli pymysql gunicorn -i https://pypi.douban.com/simple
+RUN pip install --upgrade pip \
+    && pip install redis Flask flask_restful flask_sqlalchemy flask_cors flask-cli pymysql gunicorn
 
 WORKDIR /app
 
