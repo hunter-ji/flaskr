@@ -1,15 +1,12 @@
-FROM python:latest
+FROM python
 
 LABEL maintainer "Kuari <kuari@justmylife.cc>"
 
-RUN mkdir /web && \
-    pip install flask \
-    flask-cache \
-    flask_script \
-    flask_migrate \
-    flask-sqlalchemy \
-    flask_mail \
-    pymysql \
-    requests 
+RUN pip install -i https://pypi.douban.com/simple --upgrade pip \
+    && pip install redis Flask flask_restful flask_sqlalchemy flask_cors flask-cli pymysql gunicorn -i https://pypi.douban.com/simple
 
-CMD python /web/flaskr.py
+WORKDIR /app
+
+EXPOSE 80
+
+CMD gunicorn -w 5 -b 0.0.0.0:80 server:app
