@@ -7,6 +7,8 @@ RUN pip install --upgrade pip \
 
 WORKDIR /app
 
+ENV FLASK_MODULE="production"
+
 EXPOSE 80
 
 CMD gunicorn -w 5 -b 0.0.0.0:80 server:app
